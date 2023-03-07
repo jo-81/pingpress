@@ -48,7 +48,10 @@ $container->setConfigurations($configurations);
 
 // Activation du plugin
 $pingpress = new Pingpress;
-$pingpress->addController(DashboardController::class);
+$pingpress
+    ->addController(DashboardController::class)
+    ->addController(TaxonomyController::class)
+;
 
 
 $pingpress->start();
