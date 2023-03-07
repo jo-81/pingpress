@@ -1,0 +1,18 @@
+{
+    "name": "pingpress/pingpress-management",
+    "autoload": {
+        "psr-4": {
+            "Pingpress\\": "src/",
+            "Inc\\": "inc/"
+        }
+    },
+    "authors": [
+        {
+            "name": "GeoffroyCOL",
+            "email": "geoffroy.colpart81@gmail.com"
+        }
+    ],
+    "require": {
+        "php-di/php-di": "^7.0"
+    }
+}
