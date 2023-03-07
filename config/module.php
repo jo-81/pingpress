@@ -1,6 +1,8 @@
 <?php
 // Retourne la définition des différents modules utilisé par php di
 
+use Inc\Module\PageModule;
+
 return [
-    'pingpress' => 'salut les gens',
+    'page.module' => DI\create(PageModule::class),
 ];
