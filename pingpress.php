@@ -13,6 +13,7 @@
 use DI\ContainerBuilder;
 use Pingpress\Pingpress;
 use Inc\Service\ContainerService;
+use Pingpress\Controller\ModuleController;
 use Pingpress\Controller\TaxonomyController;
 use Pingpress\Controller\DashboardController;
 
@@ -51,6 +52,7 @@ $pingpress = new Pingpress;
 $pingpress
     ->addController(DashboardController::class)
     ->addController(TaxonomyController::class)
+    ->addController(ModuleController::class)
 ;
 
 
