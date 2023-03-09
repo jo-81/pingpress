@@ -9,3 +9,4 @@ define('PINGPRESS_PLUGIN_URL', WP_PLUGIN_URL . "/pingpress" . DIRECTORY_SEPARATO
 
 define('PINGPRESS_TEMPLATE_DIR', dirname(__DIR__) . DIRECTORY_SEPARATOR . "pingpress/templates" . DIRECTORY_SEPARATOR);
 
+define('OPTION_MODULE_NONCE', 'pingpress_admin_nonce');

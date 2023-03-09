@@ -1,0 +1,99 @@
+@import "./parts/_variables";
+@import "./parts/_reset";
+@import "./parts/_container";
+@import "./parts/_card";
+@import "./parts/_typographie";
+@import "./parts/_button";
+@import "./parts/_colors";
+@import "./parts/_form";
+@import "./parts/_alert";
+
+.pp-section-form {
+    margin-top: 3rem;
+}
+
+.pp-section-header {
+    margin-bottom: 3rem;
+}
+
+.pp-section-title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $primary;
+}
+
+.pp-section {
+    display: grid;
+    gap: 1rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+}
+
+@media all and (min-width: map-get($breakpoints, xs)) {
+    .pp-section__left {
+        display: grid;
+        gap: 3rem;
+        grid-template-columns: repeat(1, 1fr);
+        align-items: baseline;
+    }
+
+    .grid-option {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .grid-left {
+        padding: $spacer;
+        background: rgba($primary, 0.15);
+    }
+
+    .grid-right {
+        padding: $spacer;
+    }
+}
+
+@media all and (min-width: map-get($breakpoints, md)) {
+    .grid-option {
+        grid-template-columns: repeat(3, 1fr);
+
+        &:not(:last-of-type) .grid-left {
+            border-bottom: 1px solid white;
+        }
+    }
+
+    .grid-right {
+        grid-column: span 2 / span 2;
+    }
+
+    .grid-left {
+        grid-column: span 1 / span 1;
+    }
+}
+
+@media all and (min-width: map-get($breakpoints, lg)) {
+    .pp-section__left {
+        grid-template-columns: repeat(3, 1fr);
+
+        & > .span-2 {
+            grid-column: span 2 / span 2;
+        }
+
+        & > .span-1 {
+            grid-column: span 1 / span 1;
+        }
+    }
+}
+
+@media all and (min-width: map-get($breakpoints, xxl)) {
+    .pp-section__left {
+        gap: 5rem;
+    }
+
+    .pp-section-option {
+        width: 75%;
+    }
+}

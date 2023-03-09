@@ -24,12 +24,14 @@ final class Module
                 'activable'     => false,
                 'template'      => PINGPRESS_TEMPLATE_DIR . "/admin/module/club.php",
                 'show_menu'     => true,
+                'description'   => 'Renseigner les différentes informations demandées concernant votre club',
             ],
             'configuration' => [
                 'title'         => __('Configuration', 'pingpress'),
                 'activable'     => false,
                 'template'      => PINGPRESS_TEMPLATE_DIR . "/admin/module/configuration.php",
                 'show_menu'     => true,
+                'description'   => 'Configuration général du plugin',
             ],
         ]);
     }
