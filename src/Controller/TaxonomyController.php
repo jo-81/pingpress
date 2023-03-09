@@ -24,11 +24,11 @@ final class TaxonomyController extends AbstractController
 
         if (is_admin()) {
             // SEASON
-            add_action('admin_menu', [$seasonTaxonomy, 'taxonomyAddSubpage']);
+            add_action('admin_menu', [$seasonTaxonomy, 'taxonomyAddSubpage'], 11);
             add_filter('parent_file', [$seasonTaxonomy, 'getParentFileTaxonomy']);
 
              // LEAGUE
-            add_action('admin_menu', [$leagueTaxonomy, 'taxonomyAddSubpage']);
+            add_action('admin_menu', [$leagueTaxonomy, 'taxonomyAddSubpage'], 12);
             add_filter('parent_file', [$leagueTaxonomy, 'getParentFileTaxonomy']);
 
             // PLAYER CATEGORY

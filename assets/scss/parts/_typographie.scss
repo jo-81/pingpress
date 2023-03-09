@@ -1,0 +1,18 @@
+a {
+    text-decoration: none;
+}
+
+p:not(:last-of-type) {
+    margin-bottom: $spacer !important;
+}
+
+.pingpress {
+    font-weight: bold;
+    color: $primary;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+.fw-bold {
+    font-weight: bold;;
+}

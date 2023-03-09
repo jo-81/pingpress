@@ -67,7 +67,7 @@ final class PageModule
      * @param  array $postType
      * @return string
      */
-    public function getParentFileForPage(string $parentFile, string $page, array $actions, array $postType = []): string
+    public function getParentFileForPage(string $parentFile, string $page, array $actions = [], array $postType = []): string
     {
         global $current_screen;
         $action = $current_screen->action;

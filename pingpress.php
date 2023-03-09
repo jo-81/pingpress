@@ -13,8 +13,11 @@
 use DI\ContainerBuilder;
 use Pingpress\Pingpress;
 use Inc\Service\ContainerService;
+use Pingpress\Controller\ModuleController;
 use Pingpress\Controller\TaxonomyController;
 use Pingpress\Controller\DashboardController;
+use Pingpress\Controller\EnqueueController;
+use Pingpress\Controller\OptionController;
 
 if (! defined('ABSPATH')) {
     exit;
@@ -49,8 +52,11 @@ $container->setConfigurations($configurations);
 // Activation du plugin
 $pingpress = new Pingpress;
 $pingpress
+    ->addController(EnqueueController::class)
+    ->addController(OptionController::class)
     ->addController(DashboardController::class)
     ->addController(TaxonomyController::class)
+    ->addController(ModuleController::class)
 ;
 
 

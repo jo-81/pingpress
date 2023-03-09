@@ -1,0 +1,23 @@
+.pp-card {
+    background-color: white;
+}
+
+.pp-card-header {
+    padding: $spacer;
+    border-bottom: 1px solid $primary;
+}
+
+.pp-card-title {
+    margin-bottom: 0;
+    font-size: inherit;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.pp-card-body {
+    padding: $spacer;
+}
+
+.pp-card-footer {
+    padding: $spacer;
+}

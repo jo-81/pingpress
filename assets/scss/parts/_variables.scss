@@ -1,0 +1,62 @@
+// COLORS
+$primary: #F5786B;
+$link: $primary;
+$grey: #C4C6C8;
+$success: #00B985;
+$dark: #303030;
+$info: #2369C5;
+$danger: #990010;
+$warning: #F37D34;
+
+$theme-colors: (
+    'primary': $primary,
+    'link': $link,
+    'grey': $grey,
+    'success': $success,
+    'dark': $dark,
+    'info': $info,
+    'danger': $danger,
+    'warning': $warning,
+);
+// COLORS
+
+// BORDER
+$border-color: $grey;
+$rounded: 0.25rem;
+// BORDER
+
+// BREACKPOINTS
+$breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+    3xl: 1600px
+) !default;
+// BREACKPOINTS 
+
+// CONTAINER
+$container-max-widths: (
+    xs: auto,
+    sm: 540px,
+    md: 720px,
+    lg: 800px,
+    xl: 1030px,
+    xxl: 1250px,
+    3xl: 1400px
+);
+// CONTAINER
+
+// CARD
+$card-header-bg-color: #FCC9C6;
+// CARD
+
+// SPACERS
+$spacer: 1rem;
+// SPACERS
+
+// TRANSITION
+$transition-time: 0.2s;
+// TRANSITION

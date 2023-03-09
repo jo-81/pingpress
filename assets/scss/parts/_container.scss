@@ -1,0 +1,20 @@
+.container {
+    padding: $spacer;
+}
+
+.container {
+    @each $breakpoint, $value in $breakpoints {
+        @media screen and (min-width: $value) { 
+
+            @if ($breakpoint == xs) {
+                margin-left: 10px;
+                margin-right: 10px;
+            } @else {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            max-width: map-get($container-max-widths, $breakpoint);
+        }
+    }
+}

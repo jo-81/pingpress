@@ -1,0 +1,23 @@
+{
+  "name": "pingpress",
+  "version": "1.0.0",
+  "description": "Extension WordPress pour la gestion d'un club d etennis de table.",
+  "main": "index.js",
+  "scripts": {
+    "admin": "sass ./assets/scss/admin.scss ./src/public/admin/css/admin.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jo-81/pingpress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jo-81/pingpress/issues"
+  },
+  "homepage": "https://github.com/jo-81/pingpress#readme",
+  "devDependencies": {
+    "sass": "^1.58.3"
+  }
+}
