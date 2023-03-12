@@ -1,12 +1,14 @@
-@import "./parts/_variables";
-@import "./parts/_reset";
-@import "./parts/_container";
-@import "./parts/_card";
-@import "./parts/_typographie";
-@import "./parts/_button";
-@import "./parts/_colors";
-@import "./parts/_form";
-@import "./parts/_alert";
+@import "../parts/_variables";
+@import "../parts/_reset";
+@import "../parts/_container";
+@import "../parts/_card";
+@import "../parts/_typographie";
+@import "../parts/_button";
+@import "../parts/_colors";
+@import "../parts/_form";
+@import "../parts/_alert";
+@import "../parts/_border";
+@import "../parts/_display";
 
 .pp-section-form {
     margin-top: 3rem;
@@ -54,6 +56,12 @@
     .grid-right {
         padding: $spacer;
     }
+
+    .ui-state-highlight {
+        height: 55px;
+        background-color: rgba($primary, 0.15);
+        border-radius: $rounded;
+    }
 }
 
 @media all and (min-width: map-get($breakpoints, md)) {
@@ -95,5 +103,9 @@
 
     .pp-section-option {
         width: 75%;
+    }
+
+    .w-xxl-50 {
+        width: 50%;
     }
 }

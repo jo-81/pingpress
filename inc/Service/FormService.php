@@ -15,7 +15,7 @@ final class FormService
     {
         $defaults = [
             'label'     => '',
-            'class'     => 'pp-form-input',
+            'class'     => 'form-input form-select',
             'selected'  => '',
             'name'      => '',
             'id'        => '',
@@ -27,10 +27,10 @@ final class FormService
         $select = "";
 
         if (! (is_null($args['label']) || empty($args['label']))) {
-            $select .= "<label class='pp-form-label' form='". esc_attr($args['name']) ."'>". esc_html($args['label']) ."</label>";
+            $select .= "<label class='form-label' form='". esc_attr($args['name']) ."'>". esc_html($args['label']) ."</label>";
         }
 
-        $select .= "<select class='pp-form-input' name='". esc_attr($args['name']) ."' id='". esc_attr($args['name']) ."'>";
+        $select .= "<select class='form-input' name='". esc_attr($args['name']) ."' id='". esc_attr($args['name']) ."'>";
             foreach($options as $key => $option) :
                 $select .= "<option ". selected($args['selected'], $key, false) ." value='". esc_attr($key) ."'>". esc_html($option) ."</option>";
             endforeach;
@@ -42,34 +42,33 @@ final class FormService
     public static function checkbox(array $datas = [])
     {
         $defaults = [
-            'label'             => '',
-            'class'             => 'pp-form-input',
-            'checked'           => '',
-            'name'              => '',
-            'attr'              => [],
+            'label'     => '',
+            'class'     => 'form-input',
+            'checked'   => '',
+            'name'      => '',
+            'id'        => '',
+            'attr'      => [],
         ];
 
         $args = wp_parse_args($datas, $defaults);
         $attr = http_build_query($args['attr'], "", " ");
+        $args['id'] = empty($args['id']) ? $args['name'] : $args['id'];
         $cheched = $args['checked'] == 'on' ? 'checked' : '';
 
         $input = "";
-        
         $input .= "<input type='hidden' name='". esc_attr($args['name']) ."'>";
 
-        $input .= "<input   class='pp-form-input' 
-                            $attr
-                            $cheched
-                            type='". esc_attr($args['type']) ."' 
-                            name='". esc_attr($args['name']) ."' 
-                            id='". esc_attr($args['name']) ."'>";
-        if (! empty($args['label'])) :
-            $input .= "<label   class='pp-form-label' 
-                                for='". esc_attr($args['name']) ."'>". esc_html($args['label']) ."</label>";
-        endif;
+        $input .= "<label   for='". esc_attr($args['name']) ."' 
+                            class='form-checkbox'>". esc_html($args['label']) ."
+            <input  type='checkbox' 
+                    $cheched
+                    $attr
+                    id='". esc_attr($args['id']) ."'
+                    name='". esc_attr($args['name']) ."'>
+            <span class='checkmark'></span>
+        </label>";
 
         return sprintf(self::generate(), $input);
-
     }
         
     /**
@@ -85,20 +84,22 @@ final class FormService
             'order'             => 'ASC',
             'orderby'           => 'slug',
             'hide_empty'        => false,
-            'class'             => 'pp-form-input',
+            'class'             => 'form-input form-select',
             'option_none_value' => 0,
             'echo'              => 0,
             'name'              => 'name',
+            'id'                => '',
             'taxonomy'          => 'cat',
             'selected'          => '',
             'show_option_all'   => '',
         ];
 
         $args = wp_parse_args($options, $defaults);
-        
+        $args['id'] = empty($args['id']) ? $args['name'] : $args['id'];
+
         $select = "";
         if (! (is_null($args['label']) || empty($args['label']))) {
-            $select .= "<label class='pp-form-label' form='". esc_attr($args['name']) ."'>". esc_html($args['label']) ."</label>";
+            $select .= "<label class='form-label' form='". esc_attr($args['name']) ."'>". esc_html($args['label']) ."</label>";
         }
 
         $select .= wp_dropdown_categories($args);
@@ -119,7 +120,7 @@ final class FormService
             'order'             => 'ASC',
             'orderby'           => 'name',
             'hide_empty'        => false,
-            'class'             => 'pp-form-input',
+            'class'             => 'form-input',
             'option_none_value' => 0,
             'echo'              => 0,
             'name'              => 'name',
@@ -184,7 +185,7 @@ final class FormService
      *
      * @return string
      */
-    public static function generate(): string
+    private static function generate(): string
     {
         return "<div class='form-control'>%s</div>";
     }
@@ -202,7 +203,7 @@ final class FormService
             'order'                 => 'ASC',
             'orderby'               => 'name',
             'hide_empty'            => false,
-            'class'                 => 'pp-form-input',
+            'class'                 => 'form-input',
             'option_none_value'     => 0,
             'echo'                  => 0,
             'ident'                  => '',

@@ -48,6 +48,14 @@ final class EnqueueModule
 
         wp_enqueue_script($name, WP_PLUGIN_URL . $file, ['jquery'], false, true);
     }
+
+    public function registerPluginJQuery(string $name, array $access = [])
+    {
+        if(! $this->access($access)) {
+            return;
+        }
+        wp_enqueue_script($name);
+    }
     
     /**
      * existFile

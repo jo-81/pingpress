@@ -1,7 +1,6 @@
 <?php
 
 use Inc\Service\ContainerService;
-use Inc\Service\MessageService;
 use Psr\Container\ContainerInterface;
 
 load_template(PINGPRESS_TEMPLATE_DIR . "/admin/parts/_header-page.php");

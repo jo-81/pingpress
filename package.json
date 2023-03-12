@@ -4,7 +4,7 @@
   "description": "Extension WordPress pour la gestion d'un club d etennis de table.",
   "main": "index.js",
   "scripts": {
-    "admin": "sass ./assets/scss/admin.scss ./src/public/admin/css/admin.css --watch"
+    "admin": "sass ./assets/scss/admin/admin.scss ./src/public/admin/css/admin.css --watch"
   },
   "repository": {
     "type": "git",

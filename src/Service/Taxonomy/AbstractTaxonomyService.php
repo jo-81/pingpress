@@ -13,4 +13,6 @@ abstract class AbstractTaxonomyService
 {
     public function __construct(protected TaxonomyModule $taxonomyModule, protected PageModule $pageModule)
     {}
+
+    abstract public function registerTaxonomy(): void;
 }

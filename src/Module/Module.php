@@ -33,6 +33,13 @@ final class Module
                 'show_menu'     => true,
                 'description'   => 'Configuration général du plugin',
             ],
+            'player' => [
+                'title'         => __('Joueurs', 'pingpress'),
+                'activable'     => false,
+                'template'      => PINGPRESS_TEMPLATE_DIR . "/admin/module/player.php",
+                'show_menu'     => true,
+                'description'   => 'Informations général et configuration concernant vos joueurs',
+            ],
         ]);
     }
 }

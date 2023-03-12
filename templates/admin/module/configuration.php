@@ -1,22 +1,12 @@
 <?php
 
 use Inc\Service\FormService;
-use Inc\Service\MessageService;
-
-$message = MessageService::get('pingpress_option_message');
 
 load_template(PINGPRESS_TEMPLATE_DIR . "/admin/parts/_header-page.php"); ?>
 
 <section class="pp-section-option">
 
-    <?php
-        if ($message) :
-            load_template(PINGPRESS_TEMPLATE_DIR . "/admin/parts/_message.php", true, [
-                'type'      => $message['type'],
-                'message'   => $message['message'],
-            ]);
-        endif;
-    ?>
+    <?php load_template(PINGPRESS_TEMPLATE_DIR . "/admin/parts/_message.php"); ?>
 
     <div class="pp-card">
         <header class="pp-card-header">
@@ -72,6 +62,32 @@ load_template(PINGPRESS_TEMPLATE_DIR . "/admin/parts/_header-page.php"); ?>
             </div>
         </div>
         <!-- Valeur pour le résultat d'une renconre : V / N / D -->
+
+        <?php if (taxonomy_exists('pp_season')) : ?>
+        <div class="grid-option">
+            <div class="grid-left">
+                <p class="fw-bold"><?php esc_html_e('Renseigner la saison courante', 'pingpress'); ?></p>
+            </div>
+
+            <div class="grid-right">
+                <?php if (! empty(wp_count_terms('pp_season'))) :
+                    echo FormService::selectTaxonomy([
+                        'taxonomy'          => 'pp_season',
+                        'name'              => 'pp_option_current_season',
+                        'show_option_all'   => __('Toutes les saisons', 'pingpress'),
+                        'selected'          => get_option('pp_option_current_season'),
+                        'order'             => 'DESC',
+                    ]); 
+                    
+                    else : ?>
+                        <p>
+                            <a href="<?php echo esc_url(add_query_arg('taxonomy', 'pp_season', admin_url('edit-tags.php'))) ?>"><?php esc_html_e('+ Ajouter une saison', 'pingpress'); ?></a>
+                        </p>
+                <?php endif;
+                ?>
+            </div>
+        </div>
+        <?php endif; ?>
 
     </div>
 </section>

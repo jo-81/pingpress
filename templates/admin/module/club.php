@@ -1,22 +1,12 @@
 <?php
 
 use Inc\Service\FormService;
-use Inc\Service\MessageService;
-
-$message = MessageService::get('pingpress_option_message');
 
 load_template(PINGPRESS_TEMPLATE_DIR . "/admin/parts/_header-page.php"); ?>
 
 <section class="pp-section-option">
 
-    <?php 
-        if ($message) :
-            load_template(PINGPRESS_TEMPLATE_DIR . "/admin/parts/_message.php", true, [
-                'type'      => $message['type'],
-                'message'   => $message['message'],
-            ]); 
-        endif;    
-    ?>
+    <?php load_template(PINGPRESS_TEMPLATE_DIR . "/admin/parts/_message.php"); ?>
 
     <!-- Informations générales du le club -->
     <div class="pp-card">
@@ -53,6 +43,7 @@ load_template(PINGPRESS_TEMPLATE_DIR . "/admin/parts/_header-page.php"); ?>
 
     </div>
     <!-- Informations générales du le club -->
+    
 </section>
 
 <?php load_template(PINGPRESS_TEMPLATE_DIR . "/admin/parts/_footer-page.php");
