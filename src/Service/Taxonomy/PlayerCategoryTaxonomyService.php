@@ -17,7 +17,7 @@ final class PlayerCategoryTaxonomyService extends AbstractTaxonomyService
     public function registerTaxonomy(): void
     {
         $labels = [
-            'name'              			=> __('Catégories', 'pingpress'),
+            'name'              			=> __('Catégorie', 'pingpress'),
             'description'                   => __('La catégorie du joueur', 'pingpress'),
             'singular_name'     			=> __('Catégorie', 'pingpress'),
             'search_items'      			=> __('Chercher une catégorie', 'pingpress'),

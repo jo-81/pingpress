@@ -1,5 +1,6 @@
 a {
     text-decoration: none;
+    color: $link;
 }
 
 p:not(:last-of-type) {
@@ -15,4 +16,12 @@ p:not(:last-of-type) {
 
 .fw-bold {
     font-weight: bold;;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.small {
+    font-size: 0.775rem;
 }

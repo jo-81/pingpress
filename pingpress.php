@@ -18,6 +18,7 @@ use Pingpress\Controller\TaxonomyController;
 use Pingpress\Controller\DashboardController;
 use Pingpress\Controller\EnqueueController;
 use Pingpress\Controller\OptionController;
+use Pingpress\Controller\PlayerController;
 
 if (! defined('ABSPATH')) {
     exit;
@@ -57,6 +58,7 @@ $pingpress
     ->addController(DashboardController::class)
     ->addController(TaxonomyController::class)
     ->addController(ModuleController::class)
+    ->addController(PlayerController::class)
 ;
 
 

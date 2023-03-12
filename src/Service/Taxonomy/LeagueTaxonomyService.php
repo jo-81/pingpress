@@ -40,7 +40,7 @@ final class LeagueTaxonomyService extends AbstractTaxonomyService
             'meta_box_cb'           => false,
         ];
 
-        $this->taxonomyModule->registerTaxonomy('pp_league', ['pp_player', 'pp_team', 'pp_event'], $args);
+        $this->taxonomyModule->registerTaxonomy('pp_league', ['pp_team', 'pp_event'], $args);
     }
 
     /**
