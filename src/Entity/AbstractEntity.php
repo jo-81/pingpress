@@ -79,7 +79,7 @@ abstract class AbstractEntity
     {
         $dateTime = new \DateTimeImmutable($date);
         $month = (int) $dateTime->format("m");
-        if ($month >=9 && $month <=12) {
+        if ($month >= 9 && $month <= 12) {
             return 1;
         }
 

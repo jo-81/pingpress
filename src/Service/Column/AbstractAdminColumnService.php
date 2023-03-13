@@ -32,6 +32,11 @@ abstract class AbstractAdminColumnService
      */
     abstract public function listColumns(): array;
 
+    public function listRemoveColumns(): array
+    {
+        return ['date'];
+    }
+
         
     /**
      * listValuesColumns
@@ -50,7 +55,12 @@ abstract class AbstractAdminColumnService
      */
     public function managementColumns(array $columns): array
     {
-        $deleteDate = $this->columnAdminModule->removeColumns($columns, [$columns['date']]);
+        $excludes = [];
+        if (! empty($column = $this->listRemoveColumns())) {
+            $excludes = array_map( fn($data) => $columns[$data], $column);
+        }
+
+        $deleteDate = $this->columnAdminModule->removeColumns($columns, $excludes);
         $newColumns = apply_filters("pingpress_{$this->postType}_admin_column", wp_parse_args($this->listColumns(), $deleteDate));
         return $this->columnAdminModule->addColumns($newColumns);
     }
