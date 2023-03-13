@@ -40,6 +40,13 @@ final class Module
                 'show_menu'     => true,
                 'description'   => 'Informations général et configuration concernant vos joueurs',
             ],
+            'team' => [
+                'title'         => __('Equipes', 'pingpress'),
+                'activable'     => false,
+                'template'      => PINGPRESS_TEMPLATE_DIR . "/admin/module/team.php",
+                'show_menu'     => true,
+                'description'   => 'Informations général et configuration concernant vos équipes',
+            ],
         ]);
     }
 }

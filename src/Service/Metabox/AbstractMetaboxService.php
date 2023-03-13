@@ -39,7 +39,6 @@ abstract class AbstractMetaboxService
     public function addMetaBoxes(string $post_type, \WP_Post $post): void
     {
         if ($post_type != $this->getPostType()) {
-            $this->metaboxModule = [];
             return;
         }
 

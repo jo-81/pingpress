@@ -77,7 +77,7 @@ final class FormService
      * @param  array $options
      * @return string
      */
-    public static function selectTaxonomy(array $options = []): string
+    public static function selectTaxonomy(array $options = [], bool $wrapper = true): string
     {
         $defaults = [
             'label'             => '',
@@ -103,6 +103,10 @@ final class FormService
         }
 
         $select .= wp_dropdown_categories($args);
+
+        if (!$wrapper) {
+            return $select;
+        }
 
         return sprintf(self::generate(), $select);
     }
